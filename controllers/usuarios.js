@@ -62,10 +62,8 @@ const usuariosDelete = async (req = request, res = response) => {
   const { id } = req.params;
 
   const usuario = await Usuario.findByIdAndUpdate(id, { estado: false });
-  res.json({
-    msg: 'delete API - usuariosDelete',
-    usuario
-  });
+  
+  res.json({ usuario });
 };
 
 module.exports = {
